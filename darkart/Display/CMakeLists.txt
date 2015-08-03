@@ -1,0 +1,94 @@
+art_make(
+  SUBDIRS
+    Submodules
+  LIB_LIBRARIES 
+    darkart_Products 
+    darkart_ODProducts
+    ${DARKSIDECORE_DATA} 
+    ${ART_UTILITIES} 
+    ${CETLIB}
+    ${FHICLCPP}
+    ${MF_MESSAGELOGGER}
+    ${MF_UTILITIES}
+
+    ${ROOT_HIST}
+    ${ROOT_TREE}
+    ${ROOT_GRAF}
+    ${PQXX}
+    ${ROOT_RINT}
+    ${ROOT_THREAD}
+    ${ROOT_CORE}
+    ${ROOT_MATHCORE}
+    ${ROOT_MATRIX}
+    ${ROOT_GPAD}
+    ${ROOT_GUI}
+    ${ROOT_GEOM}
+    ${ROOT_EVE}
+    ${ROOT_EG}
+    ${ROOT_RGL}
+    
+  MODULE_LIBRARIES
+    darkart_TpcReco
+    darkart_ODReco
+    darkart_Display
+    ${DARKART_ODRECO_TOOLS}
+    ${DARKART_ODRECO_TOOLS_UTILITIES_SERVICE}
+    bprinter
+    ${DARKSIDECORE_ARTSERVICES}
+    ${DARKSIDECORE_ARTSERVICES_DBINTERFACE_SERVICE}
+    ${ARTDAQ-CORE_DATA}
+    ${ART_FRAMEWORK_SERVICES_REGISTRY} ${FHICLCPP}
+    ${ART_FRAMEWORK_SERVICES_OPTIONAL_TFILESERVICE_SERVICE}
+    ${ART_FRAMEWORK_SERVICES_OPTIONAL}
+    ${ROOT_HIST}
+    ${ROOT_TREE}
+    ${ROOT_GRAF}
+    ${MF_MESSAGELOGGER}
+    ${MF_UTILITIES}
+    ${CETLIB}
+    ${PQXX}
+    ${ROOT_RINT}
+    ${ROOT_THREAD}
+    ${ROOT_CORE}
+    ${ROOT_MATHCORE}
+    ${ROOT_MATRIX}
+    ${ROOT_GPAD}
+    ${ROOT_GUI}
+    ${ROOT_GEOM}
+    ${ROOT_EVE}
+    ${ROOT_EG}
+    ${ROOT_RGL}
+  SOURCE_LIBRARIES
+    darkart_ODReco
+    ${ART_FRAMEWORK_CORE}
+    ${ART_FRAMEWORK_IO_SOURCES}
+    ${DARKART_ODRECO_TOOLS} 
+    ${DARKART_ODRECO_TOOLS_UTILITIES_SERVICE}
+    ${ART_FRAMEWORK_SERVICES_REGISTRY} 
+    ${MF_MESSAGELOGGER}
+    ${MF_UTILITIES}
+    ${CETLIB}
+    ${ART_UTILITIES}
+
+    ${ROOT_HIST}
+    ${ROOT_TREE}
+    ${ROOT_GRAF}
+    ${PQXX}
+    ${ROOT_RINT}
+    ${ROOT_THREAD}
+    ${ROOT_CORE}
+    ${ROOT_MATHCORE}
+    ${ROOT_MATRIX}
+    ${ROOT_GPAD}
+    ${ROOT_GUI}
+    ${ROOT_GEOM}
+    ${ROOT_EVE}
+    ${ROOT_EG}
+    ${ROOT_RGL}
+
+  EXCLUDE
+)
+
+#install_headers( SUBDIRS )
+#install_source( SUBDIRS ) 
+

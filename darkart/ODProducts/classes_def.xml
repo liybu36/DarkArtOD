@@ -1,0 +1,91 @@
+<!--
+This file instructs the ROOT tools what code needs to be
+generated. 
+
+1. Add a <class name=... /> line for the class you have just 
+   introduced, and for any new class you have defined and have 
+   used as a data member for your new class.
+2. If your data product is to be a std::vector of your newly-
+   invented type, add a <class name=.../> line for that vector 
+   type.
+3. For every data type prod to be used as top-level data product 
+   (put directly into the art::Event), add a <class name=.../> 
+   line for art::Wrapper<prod>.
+4. Make sure to add entries for any new art::Assns you create.
+
+For most new products, you may mimic the pattern of the BaselineData
+objects below. Some of the entries are not strictly necessary, 
+but add all 4 entries anyway in order to avoid possibly nasty
+debugging situations.
+
+
+-->
+
+
+<lcgdict>
+
+  <class name="darkart::od::ODEventInfo"/>
+  <class name="art::Wrapper<darkart::od::ODEventInfo>"/>
+
+  <class name="darkart::od::RunInfo::ChConfData"/>
+  <class name="art::Wrapper<darkart::od::RunInfo::ChConfData>"/>
+  <class name="std::vector<darkart::od::RunInfo::ChConfData>"/>
+  <class name="darkart::od::RunInfo::DetectorCfg"/>
+  <class name="art::Wrapper<darkart::od::RunInfo::DetectorCfg>"/>
+  <class name="darkart::od::RunInfo"/>
+  <class name="art::Wrapper<darkart::od::RunInfo>"/>
+
+  <class name="darkart::od::ChannelData::Pulse"/>
+  <class name="art::Wrapper<darkart::od::ChannelData::Pulse>"/>
+  <class name="std::vector<darkart::od::ChannelData::Pulse>"/>
+
+
+  <class name="darkart::od::ChannelData"/>
+  <class name="art::Wrapper<darkart::od::ChannelData>"/>
+  <class name="std::vector<darkart::od::ChannelData>"/>
+  <class name="art::Wrapper<std::vector<darkart::od::ChannelData> >"/>
+
+  <class name="darkart::od::ChannelWFs::PulseWF"/>
+  <class name="art::Wrapper<darkart::od::ChannelWFs::PulseWF>"/>
+  <class name="std::vector<darkart::od::ChannelWFs::PulseWF>"/>
+
+
+  <class name="darkart::od::ChannelWFs"/>
+  <class name="art::Wrapper<darkart::od::ChannelWFs>"/>
+  <class name="std::vector<darkart::od::ChannelWFs>"/>
+  <class name="art::Wrapper<std::vector<darkart::od::ChannelWFs> >"/>
+
+  <class name="std::vector<std::pair<int, int> >"/>
+
+  <class name="darkart::od::SumWFSample"/>
+  <class name="art::Wrapper<darkart::od::SumWFSample>"/>
+  <class name="std::vector<darkart::od::SumWFSample>"/>
+  <class name="art::Wrapper<std::vector<darkart::od::SumWFSample> >"/>
+
+  <class name="darkart::od::Cluster"/>
+  <class name="darkart::od::Cluster::Shape"/>
+  <class name="darkart::od::Cluster::PMTDistribution"/>
+  <class name="art::Wrapper<darkart::od::Cluster>"/>
+  <class name="std::vector<darkart::od::Cluster>"/>
+  <class name="art::Wrapper<std::vector<darkart::od::Cluster> >"/>
+
+  <class name="darkart::od::ROICfg"/>
+  <class name="art::Wrapper<darkart::od::ROICfg>"/>
+
+  <class name="darkart::od::ROI"/>
+  <class name="art::Wrapper<darkart::od::ROI>"/>
+
+
+  <class name="darkart::od::SliderCfg"/>
+  <class name="art::Wrapper<darkart::od::SliderCfg>"/>
+
+  <class name="darkart::od::Slider"/>
+  <class name="art::Wrapper<darkart::od::Slider>"/>
+
+  <class name="darkart::od::ODEventData"/>
+  <class name="art::Wrapper<darkart::od::ODEventData>"/>
+
+  <class name="darkart::od::TotalCharge"/>
+  <class name="art::Wrapper<darkart::od::TotalCharge>"/>
+
+</lcgdict>

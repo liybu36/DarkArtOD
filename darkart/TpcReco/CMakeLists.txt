@@ -1,0 +1,35 @@
+
+art_make(
+  LIB_LIBRARIES 
+    darkart_Products 
+    ${DARKSIDECORE_DATA} 
+    ${ART_UTILITIES} 
+    ${CETLIB}
+  MODULE_LIBRARIES 
+    darkart_TpcReco
+    bprinter
+    ${DARKSIDECORE_ARTSERVICES}
+    ${DARKSIDECORE_ARTSERVICES_DBINTERFACE_SERVICE}
+    ${ARTDAQ-CORE_DATA}
+    ${ART_FRAMEWORK_SERVICES_REGISTRY} ${FHICLCPP}
+    ${ART_FRAMEWORK_SERVICES_OPTIONAL_TFILESERVICE_SERVICE}
+    ${ART_FRAMEWORK_SERVICES_OPTIONAL}
+    ${ROOT_HIST}
+    ${ROOT_TREE}
+    ${ROOT_GRAF}
+    ${MF_MESSAGELOGGER}
+    ${MF_UTILITIES}
+    ${CETLIB}
+    ${PQXX}
+    ${ROOT_RINT}
+    ${ROOT_THREAD}
+    ${ROOT_CORE}
+    ${ROOT_MATHCORE}
+    ${ROOT_MATRIX}
+    ${ROOT_GPAD}
+    ${ROOT_GUI}
+)
+
+install_headers()
+install_source() 
+

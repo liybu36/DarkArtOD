@@ -1,0 +1,96 @@
+/*
+
+  2015-02-06 AFan
+  start implementing Cluster class
+
+ */
+
+#ifndef darkart_ODProducts_Cluster_hh
+#define darkart_ODProducts_Cluster_hh
+
+#include "SumWF.hh"
+#include <vector>
+
+// forward declarations
+namespace darkart {
+  namespace od {
+    struct Cluster;
+    typedef std::vector<Cluster> ClusterVec;
+  }
+}
+
+
+struct darkart::od::Cluster {
+
+  Cluster()
+    : cluster_id(-1)
+    , start_sample(-1)
+    , end_sample(-1)
+    , peak_sample(-1)
+    , max_multiplicity(-1)
+    , charge(-99999)
+    , height(-99999)
+    , start_ns(-99999)
+    , end_ns(-99999)
+    , peak_ns(-99999)
+    , shape()
+    , ch_pulse_pairs()
+    , pmt_distr()
+  {}
+
+  //forward declaration of nested structs
+  struct Shape; 
+  struct PMTDistribution;
+
+  // data members
+  int cluster_id;
+  int start_sample;
+  int end_sample;
+  int peak_sample;
+  int max_multiplicity;
+  float charge;
+  float height;
+  float start_ns;
+  float end_ns;
+  float peak_ns;
+  Shape* shape;
+  darkart::od::ChPulsePairVec ch_pulse_pairs;
+  PMTDistribution* pmt_distr;
+};
+
+
+// Example struct to demonstrate how this would work
+struct darkart::od::Cluster::Shape {
+  float mean_time_ns;   // first moment of the cluster pdf, weighted on amplitude
+  float sigma_mean_ns;  // second moment with respect to the mean time 
+  float sigma_peak_ns;  // second moment with respect to the peak time
+  float skewness;       // second moment 
+  float skewness_max;   // second moment calculated only on the main pulse without considering small pulses close to it 
+  float skewness_10to90;   // second moment calculated only between the time in witch the charge reaches 10% and the time in witch the charge reaches 90% 
+  float kurtosis;       // second moment 
+  //float max_time_ns;
+ // float max_amplitude;
+  float a10_time_ns;        // time when the amplitude is 10% of max_amplitude
+  float a90_time_ns;        // time when the amplitude is 90% of max_amplitude
+  float rise10_time_ns;       // a90_time - a10_time
+  float rise90_time_ns;       // a90_time - a10_time
+  float above_thr_time_ns;  // time above threshold
+  float c10_time_ns;        // time when the charge is 10% of the total charge
+  float c90_time_ns;        // time when the charge is 90% of the total charge
+  float f30;         // fractional charge in first  50 ns
+  float f50;        // fractional charge in first 100 ns
+  float f60;        // fractional charge in first 200 ns
+  float tail50_to_total;   //fractional charge after the first 20 ns
+  float tail60_to_total;   //fractional charge after the first 20 ns
+  //std::vector<float> params;
+};
+
+// Example struct to demonstrate how this would work
+struct darkart::od::Cluster::PMTDistribution { //all this variables use the integral of pulses, not the charge!
+  int   max_ch;               //channel with maximum charge
+  float max_ch_fraction;      //fraction of charge holded by the max_ch
+  float pmt_charge_mean;      //mean charge for each pmt within the cluster
+  float pmt_charge_variance;  //variance relative to the pmt_charge_mean
+};
+
+#endif
